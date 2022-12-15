@@ -20,7 +20,6 @@ export function IsArrayOfType(validationOptions: ArrayValidationOptions) {
       validator: {
         validate(value: any, args: ValidationArguments) {
           function recursion(value: any, arrayDepth: number) {
-            console.log(value, arrayDepth);
             if (arrayDepth > 0) {
               if (Array.isArray(value)) {
                 return value.every((e) => recursion(e, arrayDepth - 1));
